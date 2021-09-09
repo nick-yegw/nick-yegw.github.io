@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  "一键创建飞书文档目录结构"
-date:   2021-09-08 13:15:03 +0800
-categories: jekyll update
+date:   2021-09-08 19:15:03 +0800
+categories: tool
 ---
 ## 背景需求
 
 1. 一直使用 [confluence](https://www.atlassian.com/software/confluence) 进行文档相关的管理，已经有类似如下的目录结构：
 
-   ![image-20210908184503061](../feishu.assets/image-20210908184503061.png)
+   ![image-20210908184503061](/assets/image-20210908184503061.png)
 
 2. 由于公司策略调整，需要统一迁移到飞书文档。
 
@@ -41,18 +41,18 @@ categories: jekyll update
 
 * 作为一个工具型的打杂，通过脚本模拟页面操作，这是一个必备的技能
 * 通过在页面上模拟操作，很快就找到了创建请求的示例：
-  * ![image-20210908192913876](../feishu.assets/image-20210908192913876.png)
+  * ![image-20210908192913876](/assets/image-20210908192913876.png)
 * 通过创建了一堆文档之后，很快找到其中的关键元素：
   * Url: https://xiaopeng.feishu.cn/space/api/explorer/create/
   * Method: Post
   * header: `refer`和 `cookie`
-    * <img src="../../feishu.assets/image-20210908190342534.png" alt="image-20210908190342534" style="zoom:50%;" />
+    * ![image-20210908190342534](/assets/image-20210908190342534.png)
   * body:
-    * ![image-20210908190450591](../feishu.assets/image-20210908190450591.png)
+    * ![image-20210908190450591](/assets/image-20210908190450591.png)
 * 补充上述无聊里关联的一些字段说明：
   * 针对`body`里的`parent_token`, 其实就代表在哪个`文件夹`里进行文件的创建，获取形式查看链接：[docToken](https://open.feishu.cn/document/ukTMukTMukTM/ukjM5YjL5ITO24SOykjN#2b507ee2)
   * cookie里的`session` 需要你在浏览器(e.g. chrome)里完成`飞书文档的登录`，然后可以通过如下的方式获取：
-    * ![image-20210908191006800](../feishu.assets/image-20210908191006800.png)
+    * ![image-20210908191006800](/assets/image-20210908191006800.png)
 
 
 
@@ -75,11 +75,11 @@ categories: jekyll update
 * 现象如下：
 
   1. 通过上述的脚本创建的`doc文档`, 虽然已经将`标题`传给接口，但是`首次进入doc文档`时，会出来如下的现状：标题没有自动同步
-    * ![image-20210908191831417](../feishu.assets/image-20210908191831417.png)
+    * ![image-20210908191831417](/assets/image-20210908191831417.png)
   2. 更坑爹的情况出现了，如果当你在标题里输入`任意的字符`时，会自动将文档的标题进行了`同步`:
-    * ![image-20210908192052101](../feishu.assets/image-20210908192052101.png)
+    * ![image-20210908192052101](/assets/image-20210908192052101.png)
   3. 如果`撤销输入`或者`删除标题`时，脚本里输入的标题就会跟你`say goodbye` （文档的自动保存） , 变成如下，需要你人工再次输入
-    * ![image-20210908192400452](../feishu.assets/image-20210908192400452.png)
+    * ![image-20210908192400452](/assets/image-20210908192400452.png)
 
   
 
@@ -87,7 +87,7 @@ categories: jekyll update
 
   * 参考`模拟业面操作`的经验，尝试模拟人工的首次输入标题，解决上述的问题，但是，这个时候`坑爹(短时间解决不了)的事`出现了，无论是在`标题`里输入文字，还是在`正文`里输入的文字，都是使用了同一个接口(`不知道定位对不对`)，而且没有明显的识别区分，示例如下：
 
-      * ![image-20210908193304190](../feishu.assets/image-20210908193304190.png)
+      * ![image-20210908193304190](/assets/image-20210908193304190.png)
 
           * 左边是`正文`，右边是`标题`
 
