@@ -4,6 +4,11 @@ title:  "一键创建飞书文档目录结构"
 date:   2021-09-08 19:15:03 +0800
 categories: tool
 ---
+## TL;DR
+
+* 脚本地址如下：
+    * [TemplateCreator](https://github.com/nick-yegw/script_tool/blob/main/src/main/java/org/nick/tool/feishu/TemplateCreator.java)
+
 ## 背景需求
 
 1. 一直使用 [confluence](https://www.atlassian.com/software/confluence) 进行文档相关的管理，已经有类似如下的目录结构：
@@ -49,7 +54,7 @@ categories: tool
     * ![image-20210908190342534](/assets/image-20210908190342534.png)
   * body:
     * ![image-20210908190450591](/assets/image-20210908190450591.png)
-* 补充上述无聊里关联的一些字段说明：
+* 补充上述请求里关联的一些字段说明：
   * 针对`body`里的`parent_token`, 其实就代表在哪个`文件夹`里进行文件的创建，获取形式查看链接：[docToken](https://open.feishu.cn/document/ukTMukTMukTM/ukjM5YjL5ITO24SOykjN#2b507ee2)
   * cookie里的`session` 需要你在浏览器(e.g. chrome)里完成`飞书文档的登录`，然后可以通过如下的方式获取：
     * ![image-20210908191006800](/assets/image-20210908191006800.png)
@@ -66,7 +71,10 @@ categories: tool
         * 0 - 文件夹
         * 2 - doc文档
 
-  
+## 最终效果
+
+![image-20210909122742000](/assets/image-20210909122742000.png)
+
 
 ## 后续跟进 - 坑爹的飞书
 
@@ -81,7 +89,8 @@ categories: tool
   3. 如果`撤销输入`或者`删除标题`时，脚本里输入的标题就会跟你`say goodbye` （文档的自动保存） , 变成如下，需要你人工再次输入
     * ![image-20210908192400452](/assets/image-20210908192400452.png)
 
-  
+
+
 
 ### 曾经的努力：
 
@@ -90,5 +99,8 @@ categories: tool
       * ![image-20210908193304190](/assets/image-20210908193304190.png)
 
           * 左边是`正文`，右边是`标题`
+      
+  * 如果要识别处理上述的请求内容机制，需要花费大量的时间进行试验和探索，去了解其中一堆的英文数字是怎么样关联回`标题`和`正文`。
+  > 由于时间的关系，就不浪费这个心思了  ：D
 
-        
+​        
