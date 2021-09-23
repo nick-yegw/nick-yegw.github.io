@@ -21,11 +21,14 @@
 title: Nick Ye的博客
 email: nick.ye0212@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  欢迎来到我的杂谈博客 (微信号：jkl123hu)
+  欢迎来到我的杂谈博客 (微信号：jkl123hu)，一个"啰嗦"的中年油腻男人(老婆说的)
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://www.nick-ye.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:  nick-yegw
+
+baidu_tmid: d11c8b9bc802239c2cc46ff39d3faf79
+google_analytics: G-39ZD0C9L4G
 
 # Build settings
 theme: minima
