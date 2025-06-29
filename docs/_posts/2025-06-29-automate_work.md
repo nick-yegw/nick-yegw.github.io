@@ -56,7 +56,7 @@ categories: script
 # 值得骄傲
 
 * 3年的坚持，自我表扬一下 (不错，不错，不错！)
-  * ![daily_record_result.png](/assets/daily_record_result.png)   ![weekly_record_result.png](weekly_record_result.png)
+  * ![daily_record_result.png](/assets/daily_record_result.png)   ![weekly_record_result.png](/assets/weekly_record_result.png)
 
 
 # 小小感悟
